@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>HTMLWidgets</title>
+  <meta name="description" content="">
+  <meta name="author" content="Ramnath Vaidyanathan">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="stylesheet" href="libraries/frameworks/revealjs2/css/reveal.css">
+  <link rel="stylesheet" href="libraries/frameworks/revealjs2/css/theme/white.css" id="theme">
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" id="theme">
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->  <link rel="stylesheet" href = "assets/css/ribbons.css">
+
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section class='' data-state='' id='slide-1'
+  data-background='rgb(170, 152, 250)'>
+  <h2>HTMLWidgets</h2>
+
+<h4>Binding JS Libraries Made Easy</h4>
+  <p><a href="http://ramnathv.github.io">Ramnath Vaidyanathan @ Alteryx</a></p>
+
+</section>
+<section class='' data-state='' id='slide-2'
+  data-background=''>
+  
+  <p><img src="assets/img/alteryx_workflow.png" alt="alteryx"></p>
+
+</section>
+<section class='' data-state='' id='slide-3'
+  data-background=''>
+  <h2>Tale of Two Plots</h2>
+  
+</section>
+<section class='' data-state='' id='slide-4'
+  data-background=''>
+  
+  <p><img src="assets/fig/unnamed-chunk-1-1.png" alt="plot of chunk unnamed-chunk-1"> </p>
+
+</section>
+<section class='' data-state='' id='slide-5'
+  data-background=''>
+  
+  <iframe src='chart2.html' width='100%' height='600px'></iframe>
+
+</section>
+<section class='' data-state='' id='slide-6'
+  data-background=''>
+  
+  <pre><code class="r">ggplot(males, aes(x = Hair, y = Freq, fill = Eye)) +
+ geom_bar(position = &#39;dodge&#39;, stat = &#39;identity&#39;) +
+ scale_fill_manual(
+   values = c(&#39;brown&#39;, &#39;blue&#39;, &#39;#594c26&#39;, &#39;green&#39;)
+ ) +
+ theme(legend.position = &#39;none&#39;)
+</code></pre>
+
+</section>
+<section class='' data-state='' id='htmlcode'
+  data-background=''>
+  
+  <pre><code class="html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;/&gt;
+&lt;script src=&quot;lib/htmlwidgets-0.3.2/htmlwidgets.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;lib/angular-1.2.20/angular.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;lib/d3-3.4.11/d3.min.js&quot;&gt;&lt;/script&gt;
+&lt;link href=&quot;lib/nvd3-1.1.15/nv.d3.css&quot; rel=&quot;stylesheet&quot; /&gt;
+&lt;script src=&quot;lib/nvd3-1.1.15/nv.d3.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;lib/angular-nvd3-0.0.9/angular-nvd3.min.js&quot;&gt;&lt;/script&gt;
+&lt;link href=&quot;lib/ghbuttons-1.0.0/gh-buttons.css&quot; rel=&quot;stylesheet&quot; /&gt;
+&lt;link href=&quot;lib/ghbuttons-1.0.0/better-select.css&quot; rel=&quot;stylesheet&quot; /&gt;
+&lt;script src=&quot;lib/datgui-0.5.0/dat.gui.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;lib/nvd3-binding-0.1/nvd3.js&quot;&gt;&lt;/script&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;htmlwidget_container&quot;&gt;
+  &lt;div id=&quot;htmlwidget-1329&quot; class=&quot;nvd3&quot; width=&quot;100%&quot; height=&quot;400&quot;&gt;
+    &lt;div ng-controller=&quot;myCtrl1329&quot;&gt;
+      &lt;div&gt;
+        &lt;form id=&quot;controls-for-htmlwidget-1329&quot;&gt;&lt;/form&gt;
+      &lt;/div&gt;
+      &lt;nvd3 options=&quot;options&quot; data=&quot;data&quot; api=&quot;api&quot;&gt;&lt;/nvd3&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;script type=&quot;application/json&quot; data-for=&quot;htmlwidget-1329&quot;&gt;{ &quot;x&quot;: {
+ &quot;y&quot;: &quot;Freq&quot;,
+&quot;type&quot;: &quot;multiBarChart&quot;,
+&quot;group&quot;: &quot;Eye&quot;,
+&quot;x&quot;: &quot;Hair&quot;,
+&quot;data&quot;: [
+ {
+ &quot;Hair&quot;: &quot;Black&quot;,
+&quot;Eye&quot;: &quot;Brown&quot;,
+&quot;Sex&quot;: &quot;Female&quot;,
+&quot;Freq&quot;:                36 
+},
+{
+ &quot;Hair&quot;: &quot;Brown&quot;,
+&quot;Eye&quot;: &quot;Brown&quot;,
+&quot;Sex&quot;: &quot;Female&quot;,
+&quot;Freq&quot;:                66 
+},
+{
+ &quot;Hair&quot;: &quot;Red&quot;,
+&quot;Eye&quot;: &quot;Brown&quot;,
+&quot;Sex&quot;: &quot;Female&quot;,
+&quot;Freq&quot;:                16 
+},
+{
+ &quot;Hair&quot;: &quot;Blond&quot;,
+&quot;Eye&quot;: &quot;Brown&quot;,
+&quot;Sex&quot;: &quot;Female&quot;,
+&quot;Freq&quot;:                 4 
+},
+{
+ &quot;Hair&quot;: &quot;Black&quot;,
+&quot;Eye&quot;: &quot;Blue&quot;,
+&quot;Sex&quot;: &quot;Female&quot;,
+&quot;Freq&quot;:                 9 
+},
+{
+ &quot;Hair&quot;: &quot;Brown&quot;,
+&quot;Eye&quot;: &quot;Blue&quot;,
+&quot;Sex&quot;: &quot;Female&quot;,
+&quot;Freq&quot;:                34 
+},
+{
+ &quot;Hair&quot;: &quot;Red&quot;,
+&quot;Eye&quot;: &quot;Blue&quot;,
+&quot;Sex&quot;: &quot;Female&quot;,
+&quot;Freq&quot;:                 7 
+},
+{
+ &quot;Hair&quot;: &quot;Blond&quot;,
+&quot;Eye&quot;: &quot;Blue&quot;,
+&quot;Sex&quot;: &quot;Female&quot;,
+&quot;Freq&quot;:                64 
+},
+{
+ &quot;Hair&quot;: &quot;Black&quot;,
+&quot;Eye&quot;: &quot;Hazel&quot;,
+&quot;Sex&quot;: &quot;Female&quot;,
+&quot;Freq&quot;:                 5 
+},
+{
+ &quot;Hair&quot;: &quot;Brown&quot;,
+&quot;Eye&quot;: &quot;Hazel&quot;,
+&quot;Sex&quot;: &quot;Female&quot;,
+&quot;Freq&quot;:                29 
+},
+{
+ &quot;Hair&quot;: &quot;Red&quot;,
+&quot;Eye&quot;: &quot;Hazel&quot;,
+&quot;Sex&quot;: &quot;Female&quot;,
+&quot;Freq&quot;:                 7 
+},
+{
+ &quot;Hair&quot;: &quot;Blond&quot;,
+&quot;Eye&quot;: &quot;Hazel&quot;,
+&quot;Sex&quot;: &quot;Female&quot;,
+&quot;Freq&quot;:                 5 
+},
+{
+ &quot;Hair&quot;: &quot;Black&quot;,
+&quot;Eye&quot;: &quot;Green&quot;,
+&quot;Sex&quot;: &quot;Female&quot;,
+&quot;Freq&quot;:                 2 
+},
+{
+ &quot;Hair&quot;: &quot;Brown&quot;,
+&quot;Eye&quot;: &quot;Green&quot;,
+&quot;Sex&quot;: &quot;Female&quot;,
+&quot;Freq&quot;:                14 
+},
+{
+ &quot;Hair&quot;: &quot;Red&quot;,
+&quot;Eye&quot;: &quot;Green&quot;,
+&quot;Sex&quot;: &quot;Female&quot;,
+&quot;Freq&quot;:                 7 
+},
+{
+ &quot;Hair&quot;: &quot;Blond&quot;,
+&quot;Eye&quot;: &quot;Green&quot;,
+&quot;Sex&quot;: &quot;Female&quot;,
+&quot;Freq&quot;:                 8 
+} 
+],
+&quot;options&quot;: {
+ &quot;chart&quot;: {
+ &quot;type&quot;: &quot;multiBarChart&quot;,
+&quot;width&quot;: null,
+&quot;height&quot;:               400,
+&quot;xAxis&quot;: [],
+&quot;yAxis&quot;: [],
+&quot;color&quot;: [ &quot;brown&quot;, &quot;blue&quot;, &quot;#594c26&quot;, &quot;green&quot; ] 
+},
+&quot;title&quot;: {
+ &quot;enable&quot;: true,
+&quot;html&quot;: &quot;&lt;h3 style=&#39;font-family: sanserif;&#39;&gt;Plot of Freq vs Hair&lt;/h3&gt;&quot; 
+},
+&quot;subtitle&quot;: {
+ &quot;enable&quot;: true,
+&quot;text&quot;: &quot;&quot; 
+},
+&quot;caption&quot;: {
+ &quot;enable&quot;: true,
+&quot;text&quot;: &quot;&quot; 
+} 
+},
+&quot;height&quot;:               400 
+},&quot;evals&quot;: [  ] }&lt;/script&gt;
+&lt;script type=&quot;application/htmlwidget-sizing&quot; data-for=&quot;htmlwidget-1329&quot;&gt;{ &quot;viewer&quot;: {
+ &quot;width&quot;: &quot;100%&quot;,
+&quot;height&quot;:               400,
+&quot;padding&quot;:                15,
+&quot;fill&quot;: false 
+},&quot;browser&quot;: {
+ &quot;width&quot;: &quot;100%&quot;,
+&quot;height&quot;:               400,
+&quot;padding&quot;:                40,
+&quot;fill&quot;: false 
+} }&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+</section>
+<section class='' data-state='' id='slide-8'
+  data-background=''>
+  
+  <p><img src='http://media.giphy.com/media/95jaWzP8R4lSE/giphy.gif'
+  width='100%' height='600px'></img></p>
+
+</section>
+<section class='' data-state='' id='slide-9'
+  data-background=''>
+  
+  <iframe src="http://rcharts.io" height=600 width=100%></iframe>
+
+</section>
+<section class='' data-state='' id='slide-10'
+  data-background=''>
+  
+  <pre><code class="r">library(rCharts2)
+nvd3(females,
+  Freq ~ Hair, 
+  type = &#39;multiBarChart&#39;,
+  group = &#39;Eye&#39;
+) %&gt;%
+  chart(color = c(&#39;brown&#39;, &#39;blue&#39;, &#39;#594c26&#39;, &#39;green&#39;))
+</code></pre>
+
+</section>
+<section class='' data-state='' id='slide-11'
+  data-background=''>
+  
+  <iframe src='chart2.html' width='100%' height='600px'></iframe>
+
+</section>
+<section class='' data-state='' id='slide-12'
+  data-background=''>
+  
+  <pre><code class="r">library(rMaps2)
+d1 &lt;- crosslet(
+  x = &quot;country&quot;, 
+  y = c(&quot;web_index&quot;, &quot;universal_access&quot;, 
+    &quot;impact_empowerment&quot;, &quot;freedom_openness&quot;
+  ),
+  data = web_index,
+  map = map_world(leaflet = list(url = OSM_URL))
+)
+</code></pre>
+
+</section>
+<section class='' data-state='' id='slide-13'
+  data-background=''>
+  
+  <iframe src='chart3.html' width='100%' height='600px'></iframe>
+
+</section>
+<section class='' data-state='' id='howitworks'
+  data-background='http://www.saepio.com/images/how-it-works-top.jpg'>
+  <h2>How does it Work?</h2>
+  
+</section>
+<section class='' data-state='' id='slide-15'
+  data-background=''>
+  
+  <iframe src="http://jsfiddle.net/ramnathv/fffhc9ej/6/embedded/result/presentation/" height=600 width=100%></iframe>
+
+</section>
+<section class='' data-state='' id='slide-16'
+  data-background=''>
+  
+  <iframe src="http://jsfiddle.net/ramnathv/fffhc9ej/6/embedded/resources/presentation/" height=600 width=100%></iframe>
+
+</section>
+<section class='' data-state='' id='slide-17'
+  data-background=''>
+  
+  <iframe src="http://jsfiddle.net/ramnathv/fffhc9ej/6/embedded/html/presentation/" height=600 width=100%></iframe>
+
+</section>
+<section class='' data-state='' id='slide-18'
+  data-background=''>
+  
+  <iframe src="http://jsfiddle.net/ramnathv/fffhc9ej/6/embedded/js/presentation/" height=600 width=100%></iframe>
+
+</section>
+<section class='' data-state='' id='htmlwidgets'
+  data-background='lightgoldenrodyellow'>
+  <h2><a href="http://htmlwidgets.org">htmlwidgets</a></h2>
+  <p><small>with RStudio and Kenton Russell</small></p>
+
+</section>
+<section class='' data-state='' id='yamldep'
+  data-background=''>
+  <h2>Resources</h2>
+  <pre><code class="yaml">dependencies:
+  - name: jquery
+    version: 2.1.1
+    src: &quot;htmlwidgets/lib/jquery/dist/&quot;
+    script: &quot;jquery.min.js&quot;
+  - name: raphael
+    version: 2.1.1
+    src: &quot;htmlwidgets/lib/raphael&quot;
+    script: &quot;raphael-min.js&quot;
+  - name: morris.js
+    version: 0.5.0
+    src: &quot;htmlwidgets/lib/morris&quot;
+    script: morris.min.js
+    style: morris.css
+</code></pre>
+
+</section>
+<section class='' data-state='' id='slide-21'
+  data-background=''>
+  <h2>Javascript</h2>
+  <pre><code class="js">HTMLWidgets.widget({
+  type: &quot;output&quot;,
+  name: &quot;morris&quot;,
+  renderValue: function(el, x){
+    x.element = el.id
+    x.data = HTMLWidgets.dataframeToD3(x.data)
+    new Morris[x.type](x)
+  }
+})
+</code></pre>
+
+</section>
+<section class='' data-state='' id='slide-22'
+  data-background=''>
+  <h2>DEMOS</h2>
+  <ol>
+<li><a href="http://bl.ocks.org/ramnathv/raw/51f61a43f81910b868a5/">Communicating Widgets</a></li>
+<li><a href="http://bl.ocks.org/ramnathv/raw/a114d8c9cd6c4a4e1d9b/">D3 Shot Chart</a></li>
+</ol>
+
+</section>
+<section class='' data-state='' id='multi'
+  data-background='http://cdn.overclock.net/5/5d/5d68138d_Multiple-Monitors-8.jpeg'>
+  <h2>Multiple Contexts</h2>
+  
+</section>
+<section class='' data-state='' id='slide-24'
+  data-background=''>
+  
+  <p><img src="http://www.htmlwidgets.org/images/rconsole.2x.png" width="100%"></img></p>
+
+</section>
+<section class='' data-state='' id='slide-25'
+  data-background=''>
+  
+  <p><img src="http://www.htmlwidgets.org/images/rmarkdown.2x.png" width="100%"></img></p>
+
+</section>
+<section class='' data-state='' id='slide-26'
+  data-background=''>
+  
+  <p><img src="http://www.htmlwidgets.org/images/shiny.2x.jpg" width="100%"></img></p>
+
+</section>
+<section class='' data-state='' id='composable'
+  data-background='http://img.edilportale.com/products/prodotti-83213-rel32f790d91bac4159897aa66ea535d4fa.jpg'>
+  <h2>Composable</h2>
+  
+</section>
+<section class='' data-state='' id='slide-28'
+  data-background=''>
+  <h2>More Demos</h2>
+  
+</section>
+<section class='' data-state='' id='slide-29'
+  data-background=''>
+  <h2>Questions</h2>
+  
+</section>
+<section class='' data-state='' id='slide-30'
+  data-background=''>
+  <h2>Thank You</h2>
+  <style>
+#composable h2 {
+ position: absolute;
+ bottom: -500px;
+ right: 5px;
+}
+.reveal pre{box-shadow: none;}
+.reveal pre code{
+  font-family: Consolas;
+  font-size: 30px; 
+  line-height: 36px;
+  background: none;
+  color: black;
+  opacity: 0.8;
+}
+.reveal section img{
+  border: none;
+  box-shadow: none;
+}
+#htmlcode pre code {
+  font-size: 10px;
+  line-height: 12px;
+}
+
+#yamldep pre code {
+  font-size: 24px;
+  line-height: 28px;
+}
+#howitworks h2 {
+  position: absolute;
+  bottom: 300px;
+  right: -50px;
+}
+#multi h2 {
+  color: white;
+}
+</style>
+
+</section>
+    </div>
+  </div>
+</body>
+  <script src="libraries/frameworks/revealjs2/lib/js/head.min.js"></script>
+  <script src="libraries/frameworks/revealjs2/js/reveal.js"></script>
+  <script>
+  // Full list of configuration options available here:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    width: "90%",
+    height: "100%",
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+    theme: Reveal.getQueryHash().theme || 'white', 
+    transition: Reveal.getQueryHash().transition || 'none', 
+    dependencies: [
+    // Cross-browser shim that fully implements classList -
+    // https://github.com/eligrey/classList.js/
+      { src: 'libraries/frameworks/revealjs2/lib/js/classList.js', condition: function() { return !document.body.classList;}},
+      // Zoom in and out with Alt+click
+      { src: 'libraries/frameworks/revealjs2/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+      // Speaker notes
+      { src: 'libraries/frameworks/revealjs2/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+      // Remote control your reveal.js presentation using a touch device
+      //{ src: 'libraries/frameworks/revealjs2/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+      ]
+  });
+  </script>  <!-- LOAD HIGHLIGHTER JS FILES -->
+<script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!-- DONE LOADING HIGHLIGHTER JS FILES -->
+ 
+
+</html>
