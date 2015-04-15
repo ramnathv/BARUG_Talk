@@ -1,0 +1,124 @@
+/*
+
+github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+
+*/
+
+.reveal pre code {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color#333;
+  background: #f8f8f8;
+  -webkit-text-size-adjust: none;
+}
+
+.reveal pre .comment,
+.reveal pre .diff .header,
+.reveal pre .javadoc {
+  color: #998;
+  font-style: italic;
+}
+
+.reveal pre .keyword,
+.reveal pre .css .rule .keyword,
+.reveal pre .winutils,
+.reveal pre .nginx .title,
+.reveal pre .subst,
+.reveal pre .request,
+.reveal pre .status {
+  color: #333;
+  font-weight: bold;
+}
+
+.reveal pre .number,
+.reveal pre .hexcolor,
+.reveal pre .ruby .constant {
+  color: #008080;
+}
+
+.reveal pre .string,
+.reveal pre .tag .value,
+.reveal pre .phpdoc,
+.reveal pre .dartdoc,
+.reveal pre .tex .formula {
+  color: #d14;
+}
+
+.reveal pre .title,
+.reveal pre .id,
+.reveal pre .scss ..reveal preprocessor {
+  color: #900;
+  font-weight: bold;
+}
+
+.reveal pre .list .keyword,
+.reveal pre .subst {
+  font-weight: normal;
+}
+
+.reveal pre .class .title,
+.reveal pre .type,
+.reveal pre .vhdl .literal,
+.reveal pre .tex .command {
+  color: #458;
+  font-weight: bold;
+}
+
+.reveal pre .tag,
+.reveal pre .tag .title,
+.reveal pre .rules .property,
+.reveal pre .django .tag .keyword {
+  color: #000080;
+  font-weight: normal;
+}
+
+.reveal pre .attribute,
+.reveal pre .variable,
+.reveal pre .lisp .body {
+  color: #008080;
+}
+
+.reveal pre .regexp {
+  color: #009926;
+}
+
+.reveal pre .symbol,
+.reveal pre .ruby .symbol .string,
+.reveal pre .lisp .keyword,
+.reveal pre .clojure .keyword,
+.reveal pre .scheme .keyword,
+.reveal pre .tex .special,
+.reveal pre .prompt {
+  color: #990073;
+}
+
+.reveal pre .built_in {
+  color: #0086b3;
+}
+
+.reveal pre ..reveal preprocessor,
+.reveal pre .pragma,
+.reveal pre .pi,
+.reveal pre .doctype,
+.reveal pre .shebang,
+.reveal pre .cdata {
+  color: #999;
+  font-weight: bold;
+}
+
+.reveal pre .deletion {
+  background: #fdd;
+}
+
+.reveal pre .addition {
+  background: #dfd;
+}
+
+.reveal pre .diff .change {
+  background: #0086b3;
+}
+
+.reveal pre .chunk {
+  color: #aaa;
+}
